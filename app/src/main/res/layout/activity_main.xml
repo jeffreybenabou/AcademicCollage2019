@@ -43,8 +43,9 @@
                 android:text="שיעור ראשון -רכיבים בסיסיים" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/basic_layout"
                 style="@style/button"
+                android:onClick="onButtonClick"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="שיעור שני-הכרות עם סוגי פריסות" />

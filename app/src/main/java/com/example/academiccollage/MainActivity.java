@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.academiccollage.style.BasicComponents;
+import com.example.academiccollage.style.Layouts;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
         {
             case R.id.basic_component:
                 intentToStart=new Intent(this, BasicComponents.class);
+
+                break;
+            case R.id.basic_layout:
+                intentToStart=new Intent(this, Layouts.class);
 
                 break;
         }
