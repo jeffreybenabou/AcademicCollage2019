@@ -10,6 +10,7 @@
         android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/gradient"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +25,8 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
                 app:srcCompat="@drawable/logo" />
 
             <TextView
@@ -32,7 +34,8 @@
                 style="@style/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="עיצוב אפליקציה" />
+                android:text="עיצוב אפליקציה"
+                android:textColor="#77C257" />
 
             <Button
                 android:id="@+id/basic_component"
@@ -45,10 +48,27 @@
             <Button
                 android:id="@+id/basic_layout"
                 style="@style/button"
-                android:onClick="onButtonClick"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
                 android:text="שיעור שני-הכרות עם סוגי פריסות" />
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="תכנות אנדרואיד"
+                android:textColor="#77C257" />
+
+            <Button
+                android:id="@+id/liseners"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
+                android:text="מאזינים" />
+
         </LinearLayout>
     </ScrollView>
 

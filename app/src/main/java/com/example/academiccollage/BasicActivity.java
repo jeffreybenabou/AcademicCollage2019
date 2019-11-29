@@ -9,6 +9,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class BasicActivity extends AppCompatActivity {
 
+    /*
+    *
+    *
+    * מחלקה זו מורישה לכל פעילות במערכת על מנת לממש את עניין כפתור החזור שמופיע למעלה בבר
+    * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".style.Layouts"></activity>
+        <activity android:name=".basicPrograming.Liseners"></activity>
+        <activity android:name=".style.Layouts" />
         <activity android:name=".style.BasicComponents" />
         <activity android:name=".BasicActivity" />
         <activity android:name=".MainActivity">
