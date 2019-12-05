@@ -68,6 +68,13 @@
                 android:layout_height="wrap_content"
                 android:onClick="onButtonClick"
                 android:text="מאזינים" />
+            <Button
+                android:id="@+id/life_cycle"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
+                android:text="מעגל החיים" />
 
         </LinearLayout>
     </ScrollView>

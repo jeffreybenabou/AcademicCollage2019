@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.academiccollage.basicPrograming.LifeCycle;
 import com.example.academiccollage.basicPrograming.Liseners;
 import com.example.academiccollage.style.BasicComponents;
 import com.example.academiccollage.style.Layouts;
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.liseners:
                 intentToStart=new Intent(this, Liseners.class);
+                break;
+            case R.id.life_cycle:
+                intentToStart=new Intent(this, LifeCycle.class);
                 break;
         }
         startActivity(intentToStart);
