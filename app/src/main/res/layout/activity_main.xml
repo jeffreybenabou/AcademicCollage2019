@@ -76,6 +76,22 @@
                 android:onClick="onButtonClick"
                 android:text="מעגל החיים" />
 
+            <TextView
+                android:id="@+id/textView17"
+                style="@style/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="אפליקציות"
+                android:textColor="#77C257" />
+
+            <Button
+                android:id="@+id/liseners2"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
+                android:text="אינסטגרם" />
+
         </LinearLayout>
     </ScrollView>
 
