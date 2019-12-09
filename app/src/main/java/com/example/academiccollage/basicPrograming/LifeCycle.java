@@ -1,21 +1,29 @@
 package com.example.academiccollage.basicPrograming;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.academiccollage.BasicActivity;
 import com.example.academiccollage.R;
+import com.github.chrisbanes.photoview.PhotoView;
 
 public class LifeCycle extends BasicActivity {
+    PhotoView photoView ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_life_cycle);
         Toast.makeText(this,"create",Toast.LENGTH_LONG).show();
-
+       photoView= (PhotoView) findViewById(R.id.life_cycle_photo);
+       findViewById(R.id.show_destro_method_button).setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               finish();
+           }
+       });
     }
     /** Called when the activity is about to become visible. */
     @Override
