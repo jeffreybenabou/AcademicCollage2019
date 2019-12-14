@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.example.academiccollage">
+    package="com.jeffrey.academiccollage">
 
     <dist:module dist:instant="true" />
 
@@ -12,12 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".basicPrograming.LifeCycle"></activity>
-        <activity android:name=".basicPrograming.Liseners" />
-        <activity android:name=".style.Layouts" />
-        <activity android:name=".style.BasicComponents" />
-        <activity android:name=".BasicActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.jeffrey.academiccollage.basicPrograming.LifeCycle" android:parentActivityName="com.jeffrey.academiccollage.MainActivity"></activity>
+        <activity android:name="com.jeffrey.academiccollage.basicPrograming.Liseners" android:parentActivityName="com.jeffrey.academiccollage.MainActivity"/>
+        <activity android:name="com.jeffrey.academiccollage.style.Layouts" android:parentActivityName="com.jeffrey.academiccollage.MainActivity" />
+        <activity android:name="com.jeffrey.academiccollage.style.BasicComponents" android:parentActivityName="com.jeffrey.academiccollage.MainActivity"/>
+        <activity android:name="com.jeffrey.academiccollage.BasicActivity" android:parentActivityName="com.jeffrey.academiccollage.MainActivity" />
+        <activity android:name="com.jeffrey.academiccollage.MainActivity" android:parentActivityName="com.jeffrey.academiccollage.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +26,7 @@
         </activity>
 
         <service
-            android:name=".Service.FireBaseMessage"
+            android:name="com.jeffrey.academiccollage.Service.FireBaseMessage"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

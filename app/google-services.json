@@ -8,18 +8,26 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:38928241715:android:00ae128fcbca3a9c99ff46",
+        "mobilesdk_app_id": "1:38928241715:android:af0d337e8d5eb1b899ff46",
         "android_client_info": {
-          "package_name": "com.example.academiccollage"
+          "package_name": "com.jeffrey.academiccollage"
         }
       },
       "oauth_client": [
         {
-          "client_id": "38928241715-c4qs8mf6g8kcm9i3e6km9tp3eehqpit3.apps.googleusercontent.com",
+          "client_id": "38928241715-itcl52k0rr2h40b75td2k9nme56k4hgq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.academiccollage",
-            "certificate_hash": "77c9c6bc7104d690e37e5443bc217a45918e064a"
+            "package_name": "com.jeffrey.academiccollage",
+            "certificate_hash": "82b6bc0db5e4897827f50c6b9639975d85c8f007"
+          }
+        },
+        {
+          "client_id": "38928241715-jhtquicj09l5lrr0sl5c9heksff5bad8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jeffrey.academiccollage",
+            "certificate_hash": "c7dd412bec8b4dd995926ee3251372450cda1889"
           }
         },
         {
