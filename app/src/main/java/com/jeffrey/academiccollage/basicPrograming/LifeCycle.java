@@ -16,20 +16,21 @@ public class LifeCycle extends BasicActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_life_cycle);
-        Toast.makeText(this,"create",Toast.LENGTH_LONG).show();
+
        photoView= (PhotoView) findViewById(R.id.life_cycle_photo);
-       findViewById(R.id.show_destro_method_button).setOnClickListener(new View.OnClickListener() {
+     findViewById(R.id.show_destro_method_button).setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                finish();
            }
        });
     }
+
+
     /** Called when the activity is about to become visible. */
     @Override
     protected void onStart() {
         super.onStart();
-        Toast.makeText(this,"start",Toast.LENGTH_LONG).show();
 
     }
 
@@ -37,7 +38,7 @@ public class LifeCycle extends BasicActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Toast.makeText(this,"resume",Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"onResume",Toast.LENGTH_LONG).show();
 
     }
 

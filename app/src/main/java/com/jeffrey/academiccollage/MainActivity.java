@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.jeffrey.academiccollage.basicPrograming.LifeCycle;
 import com.jeffrey.academiccollage.basicPrograming.Liseners;
@@ -34,14 +35,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    public String getEmojiByUnicode(int unicode){
+        return new String(Character.toChars(unicode));
+    }
 
     public void onButtonClick(View view )
     {
         /*
         * מתודה זו מחוברת אל כל הכפתורים שמאזינים לonClick בתבנית העיצוב
         * */
-        Intent intentToStart=new Intent(this,this.getClass());
+        Intent intentToStart=null;
         switch (view.getId())
         {
             case R.id.basic_component:
@@ -58,7 +61,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.life_cycle:
                 intentToStart=new Intent(this, LifeCycle.class);
                 break;
+            case R.id.instegram:
+                Toast.makeText(this,"תלוי רק בכם"+getEmojiByUnicode(0x1F60A),Toast.LENGTH_LONG).show();
+                break;
         }
+        if(intentToStart!=null)
         startActivity(intentToStart);
     }
 }

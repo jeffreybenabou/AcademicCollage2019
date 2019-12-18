@@ -34,8 +34,7 @@
                 style="@style/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="עיצוב אפליקציה"
-                android:textColor="#77C257" />
+                android:text="עיצוב אפליקציה" />
 
             <Button
                 android:id="@+id/basic_component"
@@ -85,7 +84,7 @@
                 android:textColor="#77C257" />
 
             <Button
-                android:id="@+id/liseners2"
+                android:id="@+id/instegram"
                 style="@style/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
