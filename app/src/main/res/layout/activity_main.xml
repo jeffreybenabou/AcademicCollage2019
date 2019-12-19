@@ -58,7 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="תכנות אנדרואיד"
-                android:textColor="#77C257" />
+                 />
 
             <Button
                 android:id="@+id/liseners"
@@ -67,6 +67,15 @@
                 android:layout_height="wrap_content"
                 android:onClick="onButtonClick"
                 android:text="מאזינים" />
+
+            <Button
+                android:id="@+id/implicit_intent"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
+                android:text="פעילויות חיצוניות" />
+
             <Button
                 android:id="@+id/life_cycle"
                 style="@style/button"
@@ -81,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="אפליקציות"
-                android:textColor="#77C257" />
+                />
 
             <Button
                 android:id="@+id/instegram"

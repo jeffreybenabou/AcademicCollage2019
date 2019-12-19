@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.jeffrey.academiccollage.basicPrograming.ImplicitIntentExample;
 import com.jeffrey.academiccollage.basicPrograming.LifeCycle;
 import com.jeffrey.academiccollage.basicPrograming.Liseners;
 import com.jeffrey.academiccollage.style.BasicComponents;
@@ -60,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.life_cycle:
                 intentToStart=new Intent(this, LifeCycle.class);
+                break;
+            case R.id.implicit_intent:
+                intentToStart=new Intent(this, ImplicitIntentExample.class);
                 break;
             case R.id.instegram:
                 Toast.makeText(this,"תלוי רק בכם"+getEmojiByUnicode(0x1F60A),Toast.LENGTH_LONG).show();

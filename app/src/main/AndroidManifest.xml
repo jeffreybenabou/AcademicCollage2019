@@ -12,12 +12,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.jeffrey.academiccollage.basicPrograming.LifeCycle" android:parentActivityName="com.jeffrey.academiccollage.MainActivity"></activity>
-        <activity android:name="com.jeffrey.academiccollage.basicPrograming.Liseners" android:parentActivityName="com.jeffrey.academiccollage.MainActivity"/>
-        <activity android:name="com.jeffrey.academiccollage.style.Layouts" android:parentActivityName="com.jeffrey.academiccollage.MainActivity" />
-        <activity android:name="com.jeffrey.academiccollage.style.BasicComponents" android:parentActivityName="com.jeffrey.academiccollage.MainActivity"/>
-        <activity android:name="com.jeffrey.academiccollage.BasicActivity" android:parentActivityName="com.jeffrey.academiccollage.MainActivity" />
-        <activity android:name="com.jeffrey.academiccollage.MainActivity" android:parentActivityName="com.jeffrey.academiccollage.MainActivity">
+        <activity android:name=".basicPrograming.ImplicitIntentExample"></activity>
+        <activity
+            android:name=".basicPrograming.LifeCycle"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".basicPrograming.Liseners"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".style.Layouts"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".style.BasicComponents"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".BasicActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,17 +39,20 @@
         </activity>
 
         <service
-            android:name="com.jeffrey.academiccollage.Service.FireBaseMessage"
+            android:name=".Service.FireBaseMessage"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_adb_black_24dp" />
-        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
-             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <!--
+ Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />

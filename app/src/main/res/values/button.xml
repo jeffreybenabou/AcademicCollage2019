@@ -3,8 +3,9 @@
 
     <style name="button">
 
-        <item name="android:layout_margin">10dp</item>
-        <item name="android:textColor">#ffffff</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:textColor">#36435A</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:onClick">onButtonClick</item>
         <item name="android:background">@drawable/rounded_corner</item>
 
