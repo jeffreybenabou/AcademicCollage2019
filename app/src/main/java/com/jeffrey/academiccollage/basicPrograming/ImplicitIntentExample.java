@@ -1,37 +1,68 @@
 package com.jeffrey.academiccollage.basicPrograming;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.AlarmClock;
 import android.provider.CalendarContract;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+
+import com.jeffrey.academiccollage.BasicActivity;
 import com.jeffrey.academiccollage.R;
 
-public class ImplicitIntentExample extends AppCompatActivity {
+import java.io.InputStream;
 
+public class ImplicitIntentExample extends BasicActivity {
+
+    public int IMAGE_ADD=1;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_implicit_intent_example    );
+        setContentView(R.layout.activity_implicit_intent_example);
 
     }
 
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode==IMAGE_ADD&& resultCode == Activity.RESULT_OK)
+        {
+            try {
+                final Uri imageUri = data.getData();
+                final InputStream imageStream = getContentResolver().openInputStream(imageUri);
+                final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+              ImageView imageView= findViewById(R.id.add_images_example);
+                imageView.setImageBitmap(selectedImage);
+            }catch (Exception e)
+            {
+
+            }
 
 
+        }
+    }
 
     public void implicitIntentLiseners(View view){
+        View v = null;
+        Button b;
         switch (view.getId()) {
             case R.id.gmail:
-                setTheGmailIntent();
+                v=findViewById(R.id.gmail_scroll);
+
                 break;
             case R.id.send_text:
                 setTheTextIntent();
@@ -43,16 +74,18 @@ public class ImplicitIntentExample extends AppCompatActivity {
                 setTheInstegramIntent();
                 break;
             case R.id.facebook:
-                setTheFacebookIntent();
+                v=findViewById(R.id.facebook_scroll);
                 break;
             case R.id .image_pick:
-                setTheImagePickIntent();
+                v=findViewById(R.id.images_scroll);
                 break;
             case R.id.alarm:
-                setTheAlarmIntent();
+                v=findViewById(R.id.alarm_scroll);
+
                 break;
             case R.id.youtube:
-                setTheYoutubeIntent();
+                v=findViewById(R.id.youtube_scroll);
+
                 break;
             case R.id.calander:
                 setTheCalenderIntent();
@@ -63,7 +96,36 @@ public class ImplicitIntentExample extends AppCompatActivity {
             case R.id.camera:
                 setTheCameraIntent();
                 break;
+
+            case R.id.gmail_example:
+                setTheGmailIntent();
+                break;
+            case R.id.youtube_example:
+                setTheYoutubeIntent();
+                break;
+            case R.id.alarm_with_ui_example:
+                setTheAlarmIntent(true);
+                break;
+            case R.id.alarm_without_ui_example:
+                setTheAlarmIntent(false);
+                break;
+            case R.id.facebook_example:
+                setTheFacebookIntent();
+                break;
+            case R.id.add_images_example:
+                setTheImagePickIntent();
+                break;
         }
+        try {
+            v.setVisibility(v.getVisibility()==View.VISIBLE?View.GONE:View.VISIBLE);
+            b= (Button) view;
+            b.setCompoundDrawablesWithIntrinsicBounds( v.getVisibility()==View.VISIBLE?R.drawable.ic_arrow_drop_up_black_24dp:R.drawable.ic_arrow_drop_down_black_24dp, 0, 0, 0);
+
+        }catch (Exception e)
+        {
+
+        }
+
     }
 
 
@@ -134,13 +196,23 @@ public class ImplicitIntentExample extends AppCompatActivity {
 
     }
 
-    private void setTheAlarmIntent() {
+    private void setTheAlarmIntent(boolean showUI) {
 
 
-        Intent alarm = new Intent(AlarmClock.ACTION_SET_ALARM)
-                .putExtra(AlarmClock.EXTRA_MESSAGE, "הודעה לשעון מעורר")
-                .putExtra(AlarmClock.EXTRA_HOUR, 10)
-                .putExtra(AlarmClock.EXTRA_MINUTES, 10);
+        Log.i("showUI",""+showUI);
+        Intent alarm = new Intent(AlarmClock.ACTION_SET_ALARM);
+
+
+
+        if(!showUI)
+        {
+            alarm .putExtra(AlarmClock.EXTRA_MESSAGE, "הודעה לשעון מעורר");
+            alarm .putExtra(AlarmClock.EXTRA_HOUR, 10);
+            alarm .putExtra(AlarmClock.EXTRA_MINUTES, 10);
+            alarm.putExtra(AlarmClock.EXTRA_SKIP_UI, true);
+        }
+
+
         try
         {
             startActivity(alarm);
@@ -155,29 +227,27 @@ public class ImplicitIntentExample extends AppCompatActivity {
 
     private void setTheImagePickIntent() {
 
-        Intent  pickImage = new Intent(Intent.ACTION_PICK);
-        pickImage.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, false);
-        pickImage.addFlags(Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
-        pickImage.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-        pickImage.setType("image/*");
-        try
-        {
-            startActivity(pickImage);
-
+        Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        pickIntent.setType("image/*");
+        try {
+            startActivityForResult(Intent.createChooser(pickIntent, "Select Picture"), IMAGE_ADD);
         }catch (Exception e)
         {
-            showError(e);
+
         }
+
+
 
     }
 
     private void setTheFacebookIntent() {
 
-        Intent facebook = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/21212121"));
+
         try
         {
-            startActivity(facebook);
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://profile/100000645632898"));
 
+            startActivity(intent);
 
         }catch (Exception e)
         {

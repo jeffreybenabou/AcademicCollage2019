@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layoutDirection="ltr"
     android:layout_height="match_parent"
     android:background="@drawable/gradient">
 
@@ -27,8 +28,59 @@
                 style="@style/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_arrow_drop_down_black_24dp"
                 android:onClick="implicitIntentLiseners"
                 android:text="גימייל" />
+
+            <ScrollView
+                android:id="@+id/gmail_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView38"
+                        style="@style/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="הסבר" />
+
+
+                    <TextView
+                        android:id="@+id/textView49"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:text='שלב ראשון אנחנו נבנה אובייקט מסוג Intent בצורה הבאה\n\n
+Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts( "mailto", "jeffreybenabou@gmail.com", null));\n\ אנחנו רואים שהאובייקט של האינטנט מקבל שני פרמטרים, הפרמטר הראשון הוא ביצוע פעולה כלשהיא והפרמטר השני הוא אובייקט מסוג Uri  אשר מקבל בתוכו את סוג הפעולה שאנחנו נרצה לבצע, במקרה הזה מדובר על שליחת מייל באמצעות המילה mailto\n,ולאחר מכן למי לשלוח את המייל\n\n
+
+
+אנחנו נוסיף אל תוך האובייקט שיצרנו את הנושא שנרצה שהמשתמש יראה באמצעות קטע הקוד הבא:\n\n
+emailIntent.putExtra(Intent.EXTRA_SUBJECT,"נושא");\n\n
+אנחנו נוסיף אל תוך האובייקט שיצרנו את הטקסט שנרצה שהמשתמש יראה באמצעות קטע הקוד הבא:\n\n
+
+emailIntent.putExtra(Intent.EXTRA_TEXT,"text here");\n
+
+'
+                        android:textColor="#ffffff"
+                        android:textIsSelectable="true"
+                        tools:ignore="HardcodedText" />
+
+                    <Button
+                        android:id="@+id/gmail_example"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:onClick="implicitIntentLiseners"
+                        android:text="לחץ כאן לדוגמא" />
+                </LinearLayout>
+            </ScrollView>
 
             <Button
                 android:id="@+id/maps"
@@ -44,16 +96,107 @@
                 style="@style/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_arrow_drop_down_black_24dp"
                 android:onClick="implicitIntentLiseners"
                 android:text="youtube" />
+            <ScrollView
+                android:id="@+id/youtube_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        style="@style/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="הסבר" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:text='על מנת לשנות את הסרטון שיופעל יש להיכנס לדוגמא לסרטון כלשהוא ביוטיוב ולהסתכל על הקישור של הסרטון ונראה תבנית קבועה כלשהיא:\n
+https://www.youtube.com/watch?v=fTbzkT6lOdw\n
+https://www.youtube.com/watch?v=gUl5M9QVXrA\n
+אנחנו רואים שאחרי המילה watch?v= מגיע לנו מין קוד שמייצג לנו את הסרטון שנרצה להציג למשתמש כל מה שצריך לעשות הוא לקחת את הקוד ולשנות אותו במקום הקוד שאני שמתי.
+'
+                        android:textColor="#ffffff"
+                        android:textIsSelectable="true"
+                        tools:ignore="HardcodedText" />
+
+                    <Button
+                        android:id="@+id/youtube_example"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:onClick="implicitIntentLiseners"
+                        android:text="לחץ כאן לדוגמא" />
+                </LinearLayout>
+            </ScrollView>
+
 
             <Button
                 android:id="@+id/alarm"
                 style="@style/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_arrow_drop_down_black_24dp"
                 android:onClick="implicitIntentLiseners"
                 android:text="שעון מעורר" />
+            <ScrollView
+                android:id="@+id/alarm_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        style="@style/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="הסבר" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:text='דגש חשוב שצריך לדעת על מנת להפעיל שעון מעורר- יש להוסיף הרשאת גישה אל תוך קובץ הmanifest\n
+uses-permission android:name="com.android.alarm.permission.SET_ALARM" '
+                        android:textColor="#ffffff"
+                        android:textIsSelectable="true"
+                        tools:ignore="HardcodedText" />
+
+                    <Button
+                    android:id="@+id/alarm_without_ui_example"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:onClick="implicitIntentLiseners"
+                    android:text="שעון מעורר בלי ממשק" />
+                    <Button
+                        android:id="@+id/alarm_with_ui_example"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:onClick="implicitIntentLiseners"
+                        android:text="שעון מעורר עם ממשק" />
+                </LinearLayout>
+            </ScrollView>
 
             <Button
                 android:id="@+id/camera"
@@ -76,8 +219,57 @@
                 style="@style/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_arrow_drop_down_black_24dp"
                 android:onClick="implicitIntentLiseners"
                 android:text="פייסבוק" />
+            <ScrollView
+                android:id="@+id/facebook_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+               >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        style="@style/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="הסבר" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:text='על מנת לפתוח דף פייסבוק ספציפי יש להיכנס לאתר הבא:'
+                        android:textColor="#ffffff"
+                        android:textIsSelectable="true"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:autoLink="web"
+                        android:textColorLink="#ffffff"
+                        android:textColor="#ffffff"
+                        android:text="https://lookup-id.com/# \n ולאחר מכן יש להכניס את הקישור של הדף שאותו תרצו לקבל בתוך האתר ולהחליף את הidשקיבלתם בid שאני שמתי"
+                        />
+
+                    <Button
+                        android:id="@+id/facebook_example"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:onClick="implicitIntentLiseners"
+                        android:text="לחצו על מנת להפעיל את פייסבוק" />
+
+                </LinearLayout>
+            </ScrollView>
 
             <Button
                 android:id="@+id/send_text"
@@ -108,8 +300,53 @@
                 style="@style/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_arrow_drop_down_black_24dp"
+
                 android:onClick="implicitIntentLiseners"
-                android:text="הוספת תמונות" />
+                android:text="הוספת תמונה מהגלריה" />
+
+            <ScrollView
+                android:id="@+id/images_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        style="@style/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="דוגמא" />
+
+                    <ImageButton
+                        android:id="@+id/add_images_example"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:background="@android:color/transparent"
+                        android:cropToPadding="true"
+                        android:onClick="implicitIntentLiseners"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/ic_launcher_round"
+                        android:text="לחצו על מנת להוסיף תמונות לאפליקציה" />
+
+                    <TextView
+                        android:id="@+id/textView47"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="לחץ על התמונה כדי להוסיף תמונה חדשה מהגלריה"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+
+                </LinearLayout>
+            </ScrollView>
         </LinearLayout>
     </ScrollView>
 
