@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.jeffrey.academiccollage.basicPrograming.ImplicitIntentExample;
 import com.jeffrey.academiccollage.basicPrograming.LifeCycle;
 import com.jeffrey.academiccollage.basicPrograming.Liseners;
+import com.jeffrey.academiccollage.basicPrograming.MoveBetweenScreens;
 import com.jeffrey.academiccollage.style.BasicComponents;
 import com.jeffrey.academiccollage.style.Layouts;
 
@@ -66,7 +67,10 @@ public class MainActivity extends AppCompatActivity {
                 intentToStart=new Intent(this, ImplicitIntentExample.class);
                 break;
             case R.id.instegram:
-                Toast.makeText(this,"תלוי רק בכם"+getEmojiByUnicode(0x1F60A),Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"תלוי רק בכם"+getEmojiByUnicode(0x1F60A),Toast.LENGTH_LONG).show();
+            break;
+            case R.id.move_between_screens:
+                intentToStart=new Intent(this, MoveBetweenScreens.class);
                 break;
         }
         if(intentToStart!=null)
