@@ -12,6 +12,7 @@ import com.jeffrey.academiccollage.basicPrograming.ImplicitIntentExample;
 import com.jeffrey.academiccollage.basicPrograming.LifeCycle;
 import com.jeffrey.academiccollage.basicPrograming.Liseners;
 import com.jeffrey.academiccollage.basicPrograming.MoveBetweenScreens;
+import com.jeffrey.academiccollage.basicPrograming.ObjectsExample;
 import com.jeffrey.academiccollage.style.BasicComponents;
 import com.jeffrey.academiccollage.style.Layouts;
 
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        try {
+       /* try {
             Log.i("getIntent().getExtras()",""+getIntent().getExtras());
             if(getIntent().getExtras().getString("BasicComponents")!=null)
             {
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         }catch (Exception e)
         {
             Log.i("error",""+ Arrays.toString(e.getStackTrace()));
-        }
+        }*/
     }
 
     public String getEmojiByUnicode(int unicode){
@@ -51,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
         {
             case R.id.basic_component:
                 intentToStart=new Intent(this, BasicComponents.class);
+
+                break;
+            case R.id.objects_example_button:
+                intentToStart=new Intent(this, ObjectsExample.class);
 
                 break;
             case R.id.basic_layout:
