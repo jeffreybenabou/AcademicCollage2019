@@ -38,6 +38,7 @@ public class ObjectsExample extends AppCompatActivity {
     }
     public void addViewToScrollView(String name,String phone,int photoId,String moneyInBank){
 
+
         TextView nameOfUser = new TextView(this);
         nameOfUser.setText(name);
         nameOfUser.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));

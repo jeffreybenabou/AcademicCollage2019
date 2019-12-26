@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -15,8 +14,6 @@ import com.jeffrey.academiccollage.basicPrograming.MoveBetweenScreens;
 import com.jeffrey.academiccollage.basicPrograming.ObjectsExample;
 import com.jeffrey.academiccollage.style.BasicComponents;
 import com.jeffrey.academiccollage.style.Layouts;
-
-import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -75,8 +72,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,"תלוי רק בכם"+getEmojiByUnicode(0x1F60A),Toast.LENGTH_LONG).show();
             break;
             case R.id.move_between_screens:
-                intentToStart=new Intent(this, MoveBetweenScreens.class);
-                break;
+            intentToStart=new Intent(this, MoveBetweenScreens.class);
+            break;
+
         }
         if(intentToStart!=null)
         startActivity(intentToStart);
