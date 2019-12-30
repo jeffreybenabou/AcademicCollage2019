@@ -34,8 +34,8 @@ public class ImplicitIntentExample extends BasicActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_implicit_intent_example);
-        loadMessage();
-        addMessage();
+       /* loadMessage();
+        addMessage();*/
 
     }
 
@@ -53,7 +53,7 @@ public class ImplicitIntentExample extends BasicActivity {
 
     }
     private void loadMessage() {
-        firebaseMessageOnEachScreen.getListOfMessage("ImplicitIntentExample");
+        firebaseMessageOnEachScreen.getListOfMessage("ImplicitIntentExample",this);
     }
 
 

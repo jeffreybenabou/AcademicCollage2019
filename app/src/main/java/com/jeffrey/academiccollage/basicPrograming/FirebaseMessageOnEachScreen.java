@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -26,28 +27,38 @@ public class FirebaseMessageOnEachScreen {
 
    private FirebaseFirestore db = FirebaseFirestore.getInstance();
    private ArrayList<AskMessageObject> allMessage=new ArrayList<>();
-  private   Map<String, Object> messageMap = new HashMap<>();
-  private Activity context;
-
-    public ArrayList<AskMessageObject> getListOfMessage(String screenName){
 
 
+    public ArrayList<AskMessageObject> getListOfMessage(String screenName,final Activity context){
 
-        db.collection("qeustionOnScreen").document(screenName).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+
+
+        db.collection(screenName).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                for (int i = 0; i <queryDocumentSnapshots.getDocuments().size() ; i++) {
+                    allMessage.add(queryDocumentSnapshots.getDocuments().get(i).toObject(AskMessageObject.class));
+                }
+                LinearLayout linearLayout=context.findViewById(R.id.all_comment);
+                linearLayout.removeAllViews();
+                for (AskMessageObject message:allMessage) {
+                    TextView messageToShow=new TextView(context);
+                    messageToShow.setText(message.getTextToShow());
+                    messageToShow.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                    linearLayout.addView(messageToShow);
+                }
             }
         });
+
         return  allMessage;
     }
 
     public void saveMessageOnFireBase(AskMessageObject message, String screenName, final Activity context){
-        this.context=context;
         allMessage.add(message);
-        messageMap.put("allMessage",allMessage);
-        db.collection("qeustionOnScreen").document(screenName).set(messageMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+
+        db.collection(screenName).add(message).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
-            public void onComplete(@NonNull Task<Void> task) {
+            public void onSuccess(DocumentReference documentReference) {
                 LinearLayout linearLayout=context.findViewById(R.id.all_comment);
                 linearLayout.removeAllViews();
                 for (AskMessageObject message:allMessage) {
