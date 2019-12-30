@@ -17,6 +17,7 @@ import com.jeffrey.academiccollage.style.Layouts;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

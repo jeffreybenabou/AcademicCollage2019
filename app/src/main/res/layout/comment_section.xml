@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gradient"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp">
+
+    <TextView
+        android:id="@+id/textView46"
+        style="@style/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="שאלות ותשובות " />
+
+    <EditText
+        android:id="@+id/comment_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="הוסף תגובה"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/name_of_person"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint=" רושם התגובה"
+        android:inputType="textPersonName" />
+
+    <LinearLayout
+        android:id="@+id/all_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"></LinearLayout>
+
+    <Button
+        android:id="@+id/add_comment_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="הוסף תגובה" />
+
+</LinearLayout>

@@ -11,12 +11,13 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.jeffrey.academiccollage.BasicActivity;
 import com.jeffrey.academiccollage.R;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class ObjectsExample extends AppCompatActivity {
+public class ObjectsExample extends BasicActivity {
 
     private ArrayList<Person> persons = new ArrayList<>();
     private LinearLayout scrollView;

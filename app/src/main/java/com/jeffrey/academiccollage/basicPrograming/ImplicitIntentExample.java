@@ -12,6 +12,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -21,17 +22,38 @@ import com.jeffrey.academiccollage.BasicActivity;
 import com.jeffrey.academiccollage.R;
 
 import java.io.InputStream;
+import java.util.Date;
 
 public class ImplicitIntentExample extends BasicActivity {
 
     public int IMAGE_ADD=1;
+    private FirebaseMessageOnEachScreen firebaseMessageOnEachScreen=new FirebaseMessageOnEachScreen();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_implicit_intent_example);
+        loadMessage();
+        addMessage();
 
+    }
+
+    private void addMessage(){
+        Button button=findViewById(R.id.add_comment_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText commentText=findViewById(R.id.comment_add);
+                EditText nameOfPerson=findViewById(R.id.name_of_person);
+                firebaseMessageOnEachScreen.saveMessageOnFireBase(new AskMessageObject(nameOfPerson.getText().toString(),commentText.getText().toString(),new Date().toString()),"ImplicitIntentExample",ImplicitIntentExample.this);
+
+            }
+        });
+
+    }
+    private void loadMessage() {
+        firebaseMessageOnEachScreen.getListOfMessage("ImplicitIntentExample");
     }
 
 
@@ -130,19 +152,15 @@ public class ImplicitIntentExample extends BasicActivity {
 
 
     private void setTheMapIntent() {
-
         Uri uri = Uri.parse("geo:0,0?q=Ashqelon+collage%2C");
         Intent map = new Intent(Intent.ACTION_VIEW);
         map.setData(uri);
-
         try {
             startActivity(map);
 
         } catch (Exception e) {
             showError(e);
         }
-
-
     }
 
     private void setTheCameraIntent() {
