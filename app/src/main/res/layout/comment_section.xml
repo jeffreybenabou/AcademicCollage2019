@@ -18,17 +18,29 @@
         android:id="@+id/comment_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/custom_input"
         android:ems="10"
-        android:hint="הוסף תגובה"
-        android:inputType="textPersonName" />
+        android:hint="שאלה"
+        android:inputType="textPersonName"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="8dp"
+        android:textAlignment="viewEnd" />
 
     <EditText
         android:id="@+id/name_of_person"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/custom_input"
         android:ems="10"
-        android:hint=" רושם התגובה"
-        android:inputType="textPersonName" />
+        android:hint="כותב התגובה"
+        android:inputType="textPersonName"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="8dp"
+        android:textAlignment="viewEnd" />
 
     <LinearLayout
         android:id="@+id/all_comment"
@@ -40,6 +52,13 @@
         android:id="@+id/add_comment_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/rounded_corner"
         android:text="הוסף תגובה" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

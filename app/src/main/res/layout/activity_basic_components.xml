@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".style.BasicComponents"
-    android:layoutDirection="rtl"
+    android:layoutDirection="ltr"
     >
 
     <ScrollView
@@ -331,7 +331,10 @@
                 </androidx.cardview.widget.CardView>
 
             </LinearLayout>
-
+            <include
+                layout="@layout/comment_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

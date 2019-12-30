@@ -17,43 +17,83 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.jeffrey.academiccollage.BasicActivity;
 import com.jeffrey.academiccollage.R;
+import com.jeffrey.academiccollage.advancePrograming.ReceyclerViewMessageOnEachPage;
 
 import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class ImplicitIntentExample extends BasicActivity {
 
-    public int IMAGE_ADD=1;
-    private FirebaseMessageOnEachScreen firebaseMessageOnEachScreen=new FirebaseMessageOnEachScreen();
+    public int IMAGE_ADD = 1;
+    private ArrayList<AskMessageObject> allMessage=new ArrayList<>();
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_implicit_intent_example);
-       /* loadMessage();
-        addMessage();*/
+        initRecyclerView();
+        addMessage();
 
     }
 
-    private void addMessage(){
-        Button button=findViewById(R.id.add_comment_button);
+    private void addMessage() {
+        Button button = findViewById(R.id.add_comment_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText commentText=findViewById(R.id.comment_add);
-                EditText nameOfPerson=findViewById(R.id.name_of_person);
-                firebaseMessageOnEachScreen.saveMessageOnFireBase(new AskMessageObject(nameOfPerson.getText().toString(),commentText.getText().toString(),new Date().toString()),"ImplicitIntentExample",ImplicitIntentExample.this);
 
+                saveMessageOnFireBase();
+                initRecyclerView();
             }
         });
 
     }
-    private void loadMessage() {
-        firebaseMessageOnEachScreen.getListOfMessage("ImplicitIntentExample",this);
+
+
+
+
+
+    public void saveMessageOnFireBase(){
+        EditText commentText = findViewById(R.id.comment_add);
+        EditText nameOfPerson = findViewById(R.id.name_of_person);
+        DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
+        String date = df.format(Calendar.getInstance().getTime());
+        allMessage.add(new AskMessageObject(nameOfPerson.getText().toString(),commentText.getText().toString(),date));
+
+        db.collection("ImplicitIntentExample").add(allMessage.get(allMessage.size()-1)).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                initRecyclerView();
+            }
+        });
+
+    }
+
+    public void initRecyclerView() {
+
+// TODO: 15/12/2018 איתחול של אובייקט מסוג recycelviev
+        // TODO: 15/12/2018 אשר תפקידו הוא להציג לנו כמות מידע מסויימת לפי תבנית שהגדרנו מראש
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        layoutManager.setSmoothScrollbarEnabled(true);
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_view_message);
+        recyclerView.setLayoutManager(layoutManager);
+        ReceyclerViewMessageOnEachPage adapter = new ReceyclerViewMessageOnEachPage("ImplicitIntentExample");
+        recyclerView.setAdapter(adapter);
     }
 
 
@@ -61,16 +101,14 @@ public class ImplicitIntentExample extends BasicActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode==IMAGE_ADD&& resultCode == Activity.RESULT_OK)
-        {
+        if (requestCode == IMAGE_ADD && resultCode == Activity.RESULT_OK) {
             try {
                 final Uri imageUri = data.getData();
                 final InputStream imageStream = getContentResolver().openInputStream(imageUri);
                 final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-              ImageView imageView= findViewById(R.id.add_images_example);
+                ImageView imageView = findViewById(R.id.add_images_example);
                 imageView.setImageBitmap(selectedImage);
-            }catch (Exception e)
-            {
+            } catch (Exception e) {
 
             }
 
@@ -78,12 +116,12 @@ public class ImplicitIntentExample extends BasicActivity {
         }
     }
 
-    public void implicitIntentLiseners(View view){
+    public void implicitIntentLiseners(View view) {
         View v = null;
         Button b;
         switch (view.getId()) {
             case R.id.gmail:
-                v=findViewById(R.id.gmail_scroll);
+                v = findViewById(R.id.gmail_scroll);
 
                 break;
             case R.id.send_text:
@@ -96,17 +134,17 @@ public class ImplicitIntentExample extends BasicActivity {
                 setTheInstegramIntent();
                 break;
             case R.id.facebook:
-                v=findViewById(R.id.facebook_scroll);
+                v = findViewById(R.id.facebook_scroll);
                 break;
-            case R.id .image_pick:
-                v=findViewById(R.id.images_scroll);
+            case R.id.image_pick:
+                v = findViewById(R.id.images_scroll);
                 break;
             case R.id.alarm:
-                v=findViewById(R.id.alarm_scroll);
+                v = findViewById(R.id.alarm_scroll);
 
                 break;
             case R.id.youtube:
-                v=findViewById(R.id.youtube_scroll);
+                v = findViewById(R.id.youtube_scroll);
 
                 break;
             case R.id.calander:
@@ -139,12 +177,11 @@ public class ImplicitIntentExample extends BasicActivity {
                 break;
         }
         try {
-            v.setVisibility(v.getVisibility()==View.VISIBLE?View.GONE:View.VISIBLE);
-            b= (Button) view;
-            b.setCompoundDrawablesWithIntrinsicBounds( v.getVisibility()==View.VISIBLE?R.drawable.ic_arrow_drop_up_black_24dp:R.drawable.ic_arrow_drop_down_black_24dp, 0, 0, 0);
+            v.setVisibility(v.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
+            b = (Button) view;
+            b.setCompoundDrawablesWithIntrinsicBounds(v.getVisibility() == View.VISIBLE ? R.drawable.ic_arrow_drop_up_black_24dp : R.drawable.ic_arrow_drop_down_black_24dp, 0, 0, 0);
 
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
 
         }
 
@@ -168,13 +205,11 @@ public class ImplicitIntentExample extends BasicActivity {
 
         Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
-        try
-        {
+        try {
             startActivity(camera);
 
 
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             showError(e);
         }
 
@@ -191,12 +226,10 @@ public class ImplicitIntentExample extends BasicActivity {
                 .putExtra(CalendarContract.Events.DESCRIPTION, "אין על אנדרואיד")
                 .putExtra(CalendarContract.Events.EVENT_LOCATION, "מכללת אשקלון")
                 .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY);
-        try
-        {
+        try {
             startActivity(calander);
 
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             showError(e);
         }
 
@@ -217,27 +250,23 @@ public class ImplicitIntentExample extends BasicActivity {
     private void setTheAlarmIntent(boolean showUI) {
 
 
-        Log.i("showUI",""+showUI);
+        Log.i("showUI", "" + showUI);
         Intent alarm = new Intent(AlarmClock.ACTION_SET_ALARM);
 
 
-
-        if(!showUI)
-        {
-            alarm .putExtra(AlarmClock.EXTRA_MESSAGE, "הודעה לשעון מעורר");
-            alarm .putExtra(AlarmClock.EXTRA_HOUR, 10);
-            alarm .putExtra(AlarmClock.EXTRA_MINUTES, 10);
+        if (!showUI) {
+            alarm.putExtra(AlarmClock.EXTRA_MESSAGE, "הודעה לשעון מעורר");
+            alarm.putExtra(AlarmClock.EXTRA_HOUR, 10);
+            alarm.putExtra(AlarmClock.EXTRA_MINUTES, 10);
             alarm.putExtra(AlarmClock.EXTRA_SKIP_UI, true);
         }
 
 
-        try
-        {
+        try {
             startActivity(alarm);
 
 
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             showError(e);
         }
 
@@ -249,11 +278,9 @@ public class ImplicitIntentExample extends BasicActivity {
         pickIntent.setType("image/*");
         try {
             startActivityForResult(Intent.createChooser(pickIntent, "Select Picture"), IMAGE_ADD);
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
 
         }
-
 
 
     }
@@ -261,32 +288,26 @@ public class ImplicitIntentExample extends BasicActivity {
     private void setTheFacebookIntent() {
 
 
-        try
-        {
+        try {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://profile/100000645632898"));
 
             startActivity(intent);
 
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             showError(e);
         }
-
-
-
-
 
 
     }
 
     private void showError(Exception e) {
-        Toast.makeText(this,"אין אפשרות להפעיל פעילות זו במכשיר זה.",Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "אין אפשרות להפעיל פעילות זו במכשיר זה.", Toast.LENGTH_LONG).show();
         e.printStackTrace();
     }
 
     private void setTheInstegramIntent() {
 
-        Intent instegram = new Intent(Intent.ACTION_VIEW,  Uri.parse("http://instagram.com/_u/android"));
+        Intent instegram = new Intent(Intent.ACTION_VIEW, Uri.parse("http://instagram.com/_u/android"));
         instegram.setPackage("com.instagram.android");
 
         try {
@@ -296,17 +317,14 @@ public class ImplicitIntentExample extends BasicActivity {
         }
 
 
-
     }
 
     private void setThePhoneCallIntent() {
 
         Intent phoneCall = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "0500000000", null));
-        try
-        {
+        try {
             startActivity(phoneCall);
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             showError(e);
         }
 
@@ -316,37 +334,30 @@ public class ImplicitIntentExample extends BasicActivity {
     private void setTheTextIntent() {
 
 
-
         Intent textMessage = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:0500000000"));
         textMessage.putExtra("sms_body", "כאן תיהיה הודעה כלשהיא כמובן להשתמש בשדות ולא כמו שעשיתי פה ");
-        try
-        {
+        try {
             startActivity(textMessage);
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             showError(e);
         }
 
 
-
     }
 
-    private void setTheGmailIntent(){
+    private void setTheGmailIntent() {
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                 "mailto", "jeffreybenabou@gmail.com", null));
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT,"נושא");
-        emailIntent.putExtra(Intent.EXTRA_TEXT,"מלל מובנה כלשהוא שנרצה לתת למשתמש כברירת מחדל ");
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "נושא");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "מלל מובנה כלשהוא שנרצה לתת למשתמש כברירת מחדל ");
 
-        try
-        {
+        try {
             startActivity(emailIntent);
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             showError(e);
 
         }
     }
-
 
 
 }
