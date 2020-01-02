@@ -1,6 +1,5 @@
 package com.jeffrey.academiccollage.basicPrograming;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;

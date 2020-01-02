@@ -69,6 +69,14 @@
                 android:text="מאזינים" />
 
             <Button
+                android:id="@+id/shared_preferences"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
+                android:text="שמירת נתונים" />
+
+            <Button
                 android:id="@+id/objects_example_button"
                 style="@style/button"
                 android:layout_width="match_parent"

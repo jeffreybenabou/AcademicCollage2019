@@ -1,17 +1,15 @@
 package com.jeffrey.academiccollage;
 
-import android.graphics.Color;
+
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
+
 
 public class BasicActivity extends AppCompatActivity {
-
+static int imageToShow=0;
     /*
     *
     *
@@ -21,6 +19,7 @@ public class BasicActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
 
     }

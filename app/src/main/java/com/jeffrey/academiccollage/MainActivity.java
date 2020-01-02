@@ -12,6 +12,7 @@ import com.jeffrey.academiccollage.basicPrograming.LifeCycle;
 import com.jeffrey.academiccollage.basicPrograming.Liseners;
 import com.jeffrey.academiccollage.basicPrograming.MoveBetweenScreens;
 import com.jeffrey.academiccollage.basicPrograming.ObjectsExample;
+import com.jeffrey.academiccollage.basicPrograming.SharedPreferencesExample;
 import com.jeffrey.academiccollage.style.BasicComponents;
 import com.jeffrey.academiccollage.style.Layouts;
 
@@ -50,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
         {
             case R.id.basic_component:
                 intentToStart=new Intent(this, BasicComponents.class);
+
+                break;
+            case R.id.shared_preferences:
+                intentToStart=new Intent(this, SharedPreferencesExample.class);
 
                 break;
             case R.id.objects_example_button:
