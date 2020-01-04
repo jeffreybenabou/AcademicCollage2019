@@ -8,13 +8,18 @@ import androidx.annotation.NonNull;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.jeffrey.academiccollage.MainActivity;
 
 public class FireBaseMessage extends FirebaseMessagingService {
-    public static final String TAG = "MsgFirebaseServ";
+
+
 
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
+
+
+
    /*     createNotificationChannel();*/
        /* PendingIntent pendingIntent =null;
         Intent intent =null;

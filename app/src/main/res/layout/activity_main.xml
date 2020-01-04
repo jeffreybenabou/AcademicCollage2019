@@ -31,6 +31,21 @@
                 app:srcCompat="@drawable/logo" />
 
             <TextView
+                android:id="@+id/textView53"
+                style="@style/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="שאלות ותשובות" />
+
+            <Button
+                android:id="@+id/answer_qeustion_button"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
+                android:text="שאלות ותשובות" />
+
+            <TextView
                 android:id="@+id/textView"
                 style="@style/title"
                 android:layout_width="match_parent"

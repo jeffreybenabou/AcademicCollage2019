@@ -63,10 +63,6 @@
                 android:layout_marginBottom="32dp"
                 android:text="לחץ כאן כדי לראות את המתודות של מעגל החיים שמופעלות בעת יציאה מפעילות" />
 
-            <include
-                layout="@layout/comment_section"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 

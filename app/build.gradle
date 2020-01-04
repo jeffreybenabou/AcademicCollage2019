@@ -7,8 +7,8 @@ android {
         applicationId "com.jeffrey.academiccollage"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 10
-        versionName "10.0"
+        versionCode 11
+        versionName "11.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -27,8 +27,10 @@ dependencies {
 
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'it.sephiroth.android.library.imagezoom:imagezoom:2.2.5'
+    implementation 'com.android.volley:volley:1.1.1'
 
     implementation 'com.google.firebase:firebase-firestore:21.3.1'
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'

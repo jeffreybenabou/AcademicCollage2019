@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.jeffrey.academiccollage.advancePrograming.AnswerQestion;
 import com.jeffrey.academiccollage.basicPrograming.ImplicitIntentExample;
 import com.jeffrey.academiccollage.basicPrograming.LifeCycle;
 import com.jeffrey.academiccollage.basicPrograming.Liseners;
@@ -51,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
         {
             case R.id.basic_component:
                 intentToStart=new Intent(this, BasicComponents.class);
+
+                break;
+            case R.id.answer_qeustion_button:
+                intentToStart=new Intent(this, AnswerQestion.class);
 
                 break;
             case R.id.shared_preferences:

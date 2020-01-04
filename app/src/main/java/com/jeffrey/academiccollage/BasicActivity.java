@@ -19,6 +19,10 @@ static int imageToShow=0;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        /*
+        * שורה זו אחראית להציג את כפתור החזור במסך למעלה
+        *
+        * */
 
 
 
@@ -26,6 +30,9 @@ static int imageToShow=0;
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        /*
+        * מתודה שמיממשתי שאחראית על פעולה בעת לחיצה על החץ למעלה
+        * */
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();

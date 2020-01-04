@@ -35,8 +35,8 @@ public class ReceyclerViewMessageOnEachPage extends RecyclerView.Adapter<Receycl
         db.collection(nameOfScreen).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                for (int i = 0; i <queryDocumentSnapshots.getDocuments().size() ; i++) {
-                    allMessageOnPage.add(queryDocumentSnapshots.getDocuments().get(i).toObject(AskMessageObject.class));
+                for (int i = 0,j=queryDocumentSnapshots.getDocuments().size()-1; i <queryDocumentSnapshots.getDocuments().size() ; i++,j--) {
+                    allMessageOnPage.add(queryDocumentSnapshots.getDocuments().get(j).toObject(AskMessageObject.class));
                     notifyItemChanged(i);
                 }
 

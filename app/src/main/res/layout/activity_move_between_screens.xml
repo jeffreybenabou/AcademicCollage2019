@@ -78,21 +78,6 @@
             android:layout_marginTop="16dp"
             android:text="לחצו כאן על מנת לעבור לפעילות הבאה" />
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
-
-                <include
-                    layout="@layout/comment_section"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-        </ScrollView>
     </LinearLayout>
 
 

@@ -98,6 +98,9 @@ public class SharedPreferencesExample extends BasicActivity {
             @Override
             public void onClick(View v) {
                 colorSharedPreferences.edit().clear().apply();
+                /*
+                * מחיקת כל המידע שקיים בקובץ
+                * */
                 setTheTextToShow();
             }
         });
@@ -118,14 +121,30 @@ public class SharedPreferencesExample extends BasicActivity {
     private void saveTheData(String texttoSaveOnPhone) {
         editor.putString(""+colorSharedPreferences.getAll().size(),texttoSaveOnPhone);
         editor.apply();
+        /*
+        * שמירת נתונים על גבי הקובץ שלנו הפרמטרים שהוא מצפה לקבל הוא מזהה ולאחר מכן איזה ערך להוסיף
+        * */
 
 
     }
 
     private void setTheSharedPreferencesFile() {
+        /*
+
+       * מתודה זו מאתחל את האובייקט של שמירת הנתונים באמצעות getSharedPreferences
+      המתודה מקבלת שני פרמטרים - האחד שם הקובץ והשני פרמטר שמגדיר לנו את הקובץ כפרטי
+      במידה והקובץ כבר קיים במערכת הוא רק יקשר אותנו אל הקובץ במידה והוא לא קיים הוא ייצור קובץ חדש
+        * */
         colorSharedPreferences = getSharedPreferences("text", MODE_PRIVATE);
         editor = colorSharedPreferences.edit();
+        /*
+        * האובייקט מסוג Editor
+        * הוא אובייקט אשר מאפשר לנו לערוך את הקובץ שלנו ולשמור  עליו נתונים
+        * */
         editor.apply();
+        /*
+        * חובה לקרוא למתודה הזו על מנת לאפשר לעשות שינויים בקובץ
+        * */
     }
 
 }

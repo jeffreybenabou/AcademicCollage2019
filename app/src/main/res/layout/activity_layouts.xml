@@ -266,10 +266,6 @@
                 android:text='קווים מנחים עוזרים לנו למקם רכיבים לפי אחוזי מסך וגם עוזרים לנו להגדיר תחום לרכיב כלשהוא ולהגדיר "גבולות" גזרה, על מנת לממש את עניין האחוזים אנחנו נשתמש במאפיין שקוראים לו layout_constraintGuide_percent שהערכים שהוא מקבל הוא 1(100 אחוז) ו-0(אפס אחוז)'
                 android:textColor="@android:color/white" />
 
-            <include
-                layout="@layout/comment_section"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 
