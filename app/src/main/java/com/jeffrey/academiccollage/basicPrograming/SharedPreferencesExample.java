@@ -1,24 +1,21 @@
 package com.jeffrey.academiccollage.basicPrograming;
 
-import androidx.appcompat.app.AppCompatActivity;
+
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.jeffrey.academiccollage.BasicActivity;
 import com.jeffrey.academiccollage.R;
 
-import org.w3c.dom.Text;
 
 import java.util.Map;
 
