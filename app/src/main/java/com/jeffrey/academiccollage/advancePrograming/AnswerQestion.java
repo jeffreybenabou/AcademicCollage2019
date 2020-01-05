@@ -12,6 +12,7 @@ import android.widget.EditText;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.jeffrey.academiccollage.BasicActivity;
 import com.jeffrey.academiccollage.R;
 import com.jeffrey.academiccollage.basicPrograming.AskMessageObject;
 
@@ -20,7 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class AnswerQestion extends AppCompatActivity {
+public class AnswerQestion extends BasicActivity {
 
     private ArrayList<AskMessageObject> allMessage=new ArrayList<>();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
