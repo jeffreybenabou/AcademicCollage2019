@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".advancePrograming.AnimationExample">
+
+    <TextView
+        android:id="@+id/textView51"
+        style="@style/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="אנימציות"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView51">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/animation_left_to_right"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:onClick="setTheButtonsLiseners"
+                android:text="Left To Right" />
+
+            <Button
+                android:id="@+id/animation_top_to_bottom"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:onClick="setTheButtonsLiseners"
+                android:text="Top To Bottom" />
+
+            <Button
+                android:id="@+id/animation_fadein"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:onClick="setTheButtonsLiseners"
+                android:text="Fade In Fade Out" />
+
+            <Button
+                android:id="@+id/animation_all_diraction"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:onClick="setTheButtonsLiseners"
+                android:text="All Diraction" />
+
+            <Button
+                android:id="@+id/animation_error"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:onClick="setTheButtonsLiseners"
+                android:text="Error" />
+
+            <Button
+                android:id="@+id/animation_zoom"
+                style="@style/button"
+                android:layout_width="0.5in"
+                android:layout_height="0.5in"
+                android:layout_margin="30dp"
+                android:onClick="setTheButtonsLiseners"
+                android:text="zoom" />
+
+            <Button
+                android:id="@+id/animation_all_animation"
+                style="@style/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:onClick="setTheButtonsLiseners"
+                android:padding="10dp"
+                android:text="All Animation" />
+
+            <Button
+                android:id="@+id/animation_rotate"
+                style="@style/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:onClick="setTheButtonsLiseners"
+                android:text="Rotate" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
