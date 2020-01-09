@@ -92,6 +92,14 @@
                 android:text="שמירת נתונים" />
 
             <Button
+                android:id="@+id/swep_refresh_button"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
+                android:text="דוגמא ל SwipeRefresh" />
+
+            <Button
                 android:id="@+id/objects_example_button"
                 style="@style/button"
                 android:layout_width="match_parent"
