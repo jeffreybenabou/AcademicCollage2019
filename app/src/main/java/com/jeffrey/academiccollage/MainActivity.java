@@ -2,13 +2,17 @@ package com.jeffrey.academiccollage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.jeffrey.academiccollage.advancePrograming.AnswerQestion;
 import com.jeffrey.academiccollage.advancePrograming.SwipeRefreshControl;
+import com.jeffrey.academiccollage.basicPrograming.DialogExample;
 import com.jeffrey.academiccollage.basicPrograming.ImplicitIntentExample;
 import com.jeffrey.academiccollage.basicPrograming.LifeCycle;
 import com.jeffrey.academiccollage.basicPrograming.Liseners;
@@ -25,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
        /* try {
             Log.i("getIntent().getExtras()",""+getIntent().getExtras());
             if(getIntent().getExtras().getString("BasicComponents")!=null)
@@ -37,6 +42,16 @@ public class MainActivity extends AppCompatActivity {
         {
             Log.i("error",""+ Arrays.toString(e.getStackTrace()));
         }*/
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        /*Button button=findViewById(R.id.basic_component);
+        ObjectAnimator animation = ObjectAnimator.ofFloat(button, "translationX", 100f);
+
+        animation.setDuration(Animator.DURATION_INFINITE);
+        animation.start();*/
     }
 
     public String getEmojiByUnicode(int unicode){
@@ -57,6 +72,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.swep_refresh_button:
                 intentToStart=new Intent(this, SwipeRefreshControl.class);
+
+                break;
+            case R.id.dialog_example:
+                intentToStart=new Intent(this, DialogExample.class);
 
                 break;
             case R.id.answer_qeustion_button:
