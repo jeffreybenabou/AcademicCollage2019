@@ -12,23 +12,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
+import com.jeffrey.academiccollage.BasicActivity;
 import com.jeffrey.academiccollage.R;
-import com.jeffrey.academiccollage.basicPrograming.AskMessageObject;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 
-public class SwipeRefreshControl extends AppCompatActivity{
+public class SwipeRefreshControl extends BasicActivity {
     private TextView textToShow;
     private EditText textToSendToServer;
-    private ArrayList<AskMessageObject> allMessage=new ArrayList<>();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private  SwipeRefreshLayout swipeRefreshLayout;
 

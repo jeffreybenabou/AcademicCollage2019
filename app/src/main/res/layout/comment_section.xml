@@ -8,6 +8,7 @@
     android:layoutDirection="ltr"
     android:paddingBottom="16dp">
 
+
     <TextView
         android:id="@+id/textView46"
         style="@style/title"

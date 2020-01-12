@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/swipe_refresh"
@@ -13,17 +12,6 @@
         android:background="@drawable/gradient">
 
 
-        <TextView
-            android:id="@+id/textView56"
-            style="@style/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="ריענון נתונים באמצעות Swiper"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
@@ -35,13 +23,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView56">
 
-            <TextView
-                android:id="@+id/textView55"
+            <Button
+                android:id="@+id/send_message_to_server"
+                style="@style/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="יש להכניס מידע כל שהוא לתיבת הטקסט, מה שאנחנו רוצים לדמות זה שינוי של מידע כלשהוא שיושב בשרת, את המידע אנחנו נעביר לשרת באמצעות קלט מהשתמש וכל אחד שהאפליקציה מותקנת אצלו יוכל לשנות את הנתון הזה, אנחנו נדמה מצב של נתונים שמגיעים מהשרת ונראה את השינוים שלהם באמצעות רענון עי משיכה מלעלה"
-                android:textColor="@android:color/white" />
+                android:text="שלח מידע לשרת" />
 
             <EditText
                 android:id="@+id/input_to_send_to_server"
@@ -55,12 +42,13 @@
                 android:paddingEnd="8dp"
                 android:paddingBottom="8dp" />
 
-            <Button
-                android:id="@+id/send_message_to_server"
-                style="@style/button"
+            <TextView
+                android:id="@+id/textView55"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="שלח מידע לשרת" />
+                android:layout_marginTop="16dp"
+                android:text="יש להכניס מידע כל שהוא לתיבת הטקסט, מה שאנחנו רוצים לדמות זה שינוי של מידע כלשהוא שיושב בשרת, את המידע אנחנו נעביר לשרת באמצעות קלט מהשתמש וכל אחד שהאפליקציה מותקנת אצלו יוכל לשנות את הנתון הזה, אנחנו נדמה מצב של נתונים שמגיעים מהשרת ונראה את השינוים שלהם באמצעות רענון עי משיכה מלעלה"
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/server_text"
@@ -72,6 +60,17 @@
                 android:textAlignment="viewEnd" />
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView56"
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="ריענון נתונים באמצעות Swiper"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
