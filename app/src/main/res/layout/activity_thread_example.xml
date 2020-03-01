@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_image"
+    android:layoutDirection="ltr"
+    tools:context=".advancePrograming.ThreadExample">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView54"
+                style="@style/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="תהליכונים"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView57"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="לכל אפליקציית אנדרואיד יש תהליך ראשי האחראי על הטיפול בממשק המשתמש (כולל מדידה ותצוגה של תצוגות). \n אם יש יותר מדי עבודה על התהליך הראשי, נקבל הרגשה שהאפליקציה נתקעת או מאטה, מה שמוביל לחווית משתמש לא רצויה.\n  כל החישובים והפעולות ארוכות הטווח כמו בקשות כבדות לשרת, גישה לדיסק צריכים להיעשות על תהליכון נפרד. באופן כללי, כל דבר שדורש יותר מכמה אלפיות השנייה צריך להיות מקושר לתהליכון בנפרד. "
+                android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+            <TextView
+                android:id="@+id/textView60"
+                style="@style/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="דוגמא לתהליכון" />
+
+            <Button
+                android:id="@+id/start_clock_without_thread"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="התחל שעון ללא תהליכון" />
+
+            <TextView
+                android:id="@+id/textView62"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="כאשר נלחץ על התחל שעון ללא תהליכון, אנחנו נשים לב שהאפליקציה שלנו תיתקע עד שהלולאה תסיים לרוץ"
+                android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+            <Button
+                android:id="@+id/start_clock_with_thread"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="התחל שעון עם תהליכון" />
+
+            <TextView
+                android:id="@+id/textView63"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="כאשר נלחץ על הכפתור התחל שעון עם תהליכון אנחנו נשים לב שהאפליקציה שלנו לא נתקעת ואפשר להמשיך לעשות פעולות באפליקציה"
+                android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+            <Button
+                android:id="@+id/stop_clock"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="עצור שעון" />
+
+            <TextView
+                android:id="@+id/title_of_time"
+                style="@style/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

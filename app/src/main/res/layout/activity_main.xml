@@ -133,6 +133,14 @@
                 android:text="מעבר בין מסכים" />
 
             <Button
+                android:id="@+id/thread_example"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
+                android:text="תהליכונים" />
+
+            <Button
                 android:id="@+id/implicit_intent"
                 style="@style/button"
                 android:layout_width="match_parent"

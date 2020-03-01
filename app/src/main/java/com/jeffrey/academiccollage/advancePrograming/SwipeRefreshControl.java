@@ -1,15 +1,14 @@
 package com.jeffrey.academiccollage.advancePrograming;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -18,6 +17,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.jeffrey.academiccollage.BasicActivity;
 import com.jeffrey.academiccollage.R;
+
 import java.util.HashMap;
 
 public class SwipeRefreshControl extends BasicActivity {
@@ -33,7 +33,7 @@ public class SwipeRefreshControl extends BasicActivity {
         setTheSwiperLiseners();
         setTheTextViewLiseners();
         setTheInputLiseners();
-        setTheSnackBar();
+
 
 
     }
@@ -41,18 +41,13 @@ public class SwipeRefreshControl extends BasicActivity {
     private void setTheSnackBar() {
 
         Snackbar snackbar = Snackbar
-                .make(swipeRefreshLayout, "www.journaldev.com", Snackbar.LENGTH_INDEFINITE).setAction("UNDO", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Snackbar snackbar1 = Snackbar.make(swipeRefreshLayout, "Message is restored!", Snackbar.LENGTH_SHORT);
-                        snackbar1.show();
-                    }
-                });
+                .make(swipeRefreshLayout, "המידע התקבל בשרת, יש לבצע ריענון.", Snackbar.LENGTH_LONG);
         snackbar.setActionTextColor(Color.parseColor("#ffffff"));
         View snackBarView = snackbar.getView();
-
-        snackBarView.setBackgroundColor(Color.parseColor("#ffffff"));
+        snackBarView.setBackgroundColor(Color.parseColor("#0f0f0f"));
         snackbar.show();
+
+
     }
 
     private void setTheInputLiseners() {
@@ -66,8 +61,7 @@ public class SwipeRefreshControl extends BasicActivity {
                 db.collection("swipeExample").document("textToSendToServer").set(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(SwipeRefreshControl.this, "המידע התקבל בשרת, יש לבצע ריענון.", Toast.LENGTH_LONG).show();
-
+                        setTheSnackBar();
                     }
                 });
 

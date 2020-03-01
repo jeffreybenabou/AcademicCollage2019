@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_image"
     android:layoutDirection="ltr"
-    android:background="@drawable/gradient"
     tools:context=".style.Layouts">
 
     <ScrollView
@@ -268,7 +268,6 @@
 
         </LinearLayout>
     </ScrollView>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

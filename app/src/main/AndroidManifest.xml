@@ -14,15 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".advancePrograming.SignIn">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".advancePrograming.AnimationExample"></activity>
+        <activity android:name=".advancePrograming.RecyclerViewExample"></activity>
+        <activity android:name=".advancePrograming.ThreadExample" />
+        <activity android:name=".advancePrograming.AnimationExample" />
         <activity android:name=".basicPrograming.DialogExample" />
         <activity android:name=".advancePrograming.SwipeRefreshControl" />
         <activity android:name=".advancePrograming.AnswerQestion" />
@@ -49,7 +43,11 @@
         <activity
             android:name=".MainActivity"
             android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <meta-data

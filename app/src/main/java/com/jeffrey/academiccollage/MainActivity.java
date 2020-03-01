@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.jeffrey.academiccollage.advancePrograming.AnimationExample;
 import com.jeffrey.academiccollage.advancePrograming.AnswerQestion;
 import com.jeffrey.academiccollage.advancePrograming.SwipeRefreshControl;
+import com.jeffrey.academiccollage.advancePrograming.ThreadExample;
 import com.jeffrey.academiccollage.basicPrograming.DialogExample;
 import com.jeffrey.academiccollage.basicPrograming.ImplicitIntentExample;
 import com.jeffrey.academiccollage.basicPrograming.LifeCycle;
@@ -62,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.animation_button:
                 intentToStart=new Intent(this, AnimationExample.class);
+
+                break;
+            case R.id.thread_example:
+                intentToStart=new Intent(this, ThreadExample.class);
 
                 break;
             case R.id.swep_refresh_button:
