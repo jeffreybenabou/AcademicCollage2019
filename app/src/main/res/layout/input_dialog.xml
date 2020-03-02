@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/textView65"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="נא להכניס את הפרטים הנדרשים"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/title_of_vacation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="הכנס את שם היעד"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/description_of_vacation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="הכנס את תיאור היעד"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/price_of_vacation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="הכנס טווח מחירים"
+        android:inputType="textPersonName" />
+
+</LinearLayout>

@@ -5,6 +5,85 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_image"
-    tools:context=".advancePrograming.RecyclerViewExample">
+    tools:context=".advancePrograming.RecyclerExample.RecyclerViewExample">
+
+    <TextView
+        android:id="@+id/textView64"
+        style="@style/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="דוגמא ל RecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView64">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/test1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n שלב ראשון\n"
+                android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+            <TextView
+                android:id="@+id/test2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="יש ליצור פעילות חדשה ולהכניס אל תוך תבנית העיצוב שלנו רכיב בשם RecyclerView ולתת מזהה לרכיב."
+                android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+            <TextView
+                android:id="@+id/test3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nשלב שני\n"
+                android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+            <TextView
+                android:id="@+id/test4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="יש ליצור תבנית עיצוב חדשה אשר תגדיר לנו איך כל רכיב יראה ברשימה שלנו, בשלב מאוחר יותר אנחנו נשתמש בתבנית הזו כדי להציג למשתמש את הנתונים שקיימים./n אנחנו נטען את הנתונים מהשרת ככה שלא נידע מראש כמה אובייקטים אנחנו צריכים להציג או איזה מידע קיים."
+                android:textColor="@color/common_google_signin_btn_text_dark_default" />
+            <TextView
+                android:id="@+id/test5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nשלב שלישי\n"
+                android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+            <TextView
+                android:id="@+id/test6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" יש לבנות מחלקה חדשה שיורשת מהמחלקה RecyclerView.Adapter NameOfClass.ViewHolder (יש להסתכל בסינטקס במחלקה עצמה) כאשר הפרמטר שנמצא בפנים הוא מחלקה פנימית אשר המחלקה הזו בעצמה יורשת מהמחלקה : RecyclerView.ViewHolder אנחנו נשתמש במחלקה זו כדי לאתחל אובייקט מין הרשימה."
+                android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+            <Button
+                android:id="@+id/recycler_example_button"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="לחץ כאן לדוגמא" />
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

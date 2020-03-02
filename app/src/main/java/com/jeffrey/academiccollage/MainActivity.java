@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.jeffrey.academiccollage.advancePrograming.AnimationExample;
 import com.jeffrey.academiccollage.advancePrograming.AnswerQestion;
+import com.jeffrey.academiccollage.advancePrograming.RecyclerExample.RecyclerViewExample;
 import com.jeffrey.academiccollage.advancePrograming.SwipeRefreshControl;
 import com.jeffrey.academiccollage.advancePrograming.ThreadExample;
 import com.jeffrey.academiccollage.basicPrograming.DialogExample;
@@ -69,6 +70,12 @@ public class MainActivity extends AppCompatActivity {
                 intentToStart=new Intent(this, ThreadExample.class);
 
                 break;
+
+            case R.id.recycler_example:
+                intentToStart=new Intent(this, RecyclerViewExample.class);
+                break;
+
+
             case R.id.swep_refresh_button:
                 intentToStart=new Intent(this, SwipeRefreshControl.class);
 
