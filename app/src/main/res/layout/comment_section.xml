@@ -52,10 +52,10 @@
 
     <Button
         android:id="@+id/add_comment_button"
+        style="@style/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:background="@drawable/rounded_corner"
         android:text="הוסף תגובה" />
 
     <androidx.recyclerview.widget.RecyclerView

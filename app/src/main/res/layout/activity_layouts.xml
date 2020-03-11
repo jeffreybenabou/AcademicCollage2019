@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0dp"
                 android:text="פריסות Layouts"
-                android:textColor="#77C257" />
+                android:textColor="#ECBF89" />
 
             <TextView
 
@@ -37,7 +37,7 @@
 
                 android:layout_marginEnd="8dp"
                 android:text=' אז מהי פריסה?\n\n פריסה היא "מיכל" בלתי נראה שיכול להכיל בתוכו מגוון רחב של אובייקטים, תפקיד הפריסה היא להגדיר את המבנה של ממשק המשתמש באפליקציה שלנו -כלומר לסדר את הרכיבים בצורה מסויימת, קיימות כל מיני סוגי פריסות שונים שכל פריסה מסדרת את הרכיבים שלה בצורה אחרת.'
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -47,7 +47,7 @@
                 android:layout_margin="0dp"
 
                 android:text="סוגי פריסות"
-                android:textColor="#77C257" />
+                android:textColor="#ECBF89" />
 
             <TextView
                 android:id="@+id/textView18"
@@ -60,7 +60,7 @@
                 android:layout_marginEnd="8dp"
                 android:text="ConstraintLayout"
                 android:textAlignment="center"
-                android:textColor="#77C257"
+                android:textColor="#ECBF89"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -176,7 +176,7 @@
                 android:layout_marginEnd="8dp"
                 android:text="LinearLayout (horizontal/vertical)"
                 android:textAlignment="center"
-                android:textColor="#77C257"
+                android:textColor="#ECBF89"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -252,7 +252,7 @@
                 android:layout_marginEnd="8dp"
                 android:text="GuideLine (Vertical/Horizontal)"
                 android:textAlignment="center"
-                android:textColor="#77C257"
+                android:textColor="#ECBF89"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 

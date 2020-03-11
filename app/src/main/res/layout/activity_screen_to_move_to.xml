@@ -21,19 +21,19 @@
             android:id="@+id/first_name_get"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/last_name_get"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/more_text_get"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/go_back_to_previous_activity"

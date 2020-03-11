@@ -29,7 +29,8 @@
                 android:layout_marginTop="20dp"
                 android:foregroundGravity="center"
                 android:gravity="center"
-                android:text="דוגמא למעגל החיים" />
+                android:text="דוגמא למעגל החיים"
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/textView15"
@@ -37,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="במסך זה אנחנו נבחין בפופ אפ שקופץ ומציג לנו את שמות המתודות שמעגל החיים מפעיל בעת טעינת המסך(הפעילות שלנו)."
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/textView16"
@@ -46,7 +47,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:text="סדר הפעלת המתודות"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/black" />
 
             <com.github.chrisbanes.photoview.PhotoView
                 android:id="@+id/life_cycle_photo"

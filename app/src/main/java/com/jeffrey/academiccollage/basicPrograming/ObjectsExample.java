@@ -1,31 +1,17 @@
 package com.jeffrey.academiccollage.basicPrograming;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.jeffrey.academiccollage.BasicActivity;
 import com.jeffrey.academiccollage.R;
-import com.jeffrey.academiccollage.advancePrograming.ReceyclerViewMessageOnEachPage;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Random;
 
 public class ObjectsExample extends BasicActivity {
@@ -55,25 +41,25 @@ public class ObjectsExample extends BasicActivity {
         TextView nameOfUser = new TextView(this);
         nameOfUser.setText(name);
         nameOfUser.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        nameOfUser.setTextColor(Color.parseColor("#ffffff"));
+        nameOfUser.setTextColor(Color.parseColor("#000000"));
 
 
         TextView phoneNumber = new TextView(this);
         phoneNumber.setText(phone);
         phoneNumber.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        phoneNumber.setTextColor(Color.parseColor("#ffffff"));
+        phoneNumber.setTextColor(Color.parseColor("#000000"));
 
         TextView userPhoto = new TextView(this);
         userPhoto.setText("תמונת המשתמש");
         userPhoto.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        userPhoto.setTextColor(Color.parseColor("#ffffff"));
+        userPhoto.setTextColor(Color.parseColor("#000000"));
         userPhoto.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
 
         TextView moneyInBankText = new TextView(this);
         moneyInBankText.setText(moneyInBank);
         moneyInBankText.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        moneyInBankText.setTextColor(Color.parseColor("#ffffff"));
+        moneyInBankText.setTextColor(Color.parseColor("#000000"));
 
         ImageView imageView=new ImageView(this);
         imageView.setImageResource(photoId);

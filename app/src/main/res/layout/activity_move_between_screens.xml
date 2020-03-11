@@ -39,7 +39,7 @@
             android:ems="10"
             android:hint="הכנס שם פרטי"
             android:inputType="textPersonName"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/widget_edittext_dark"
             android:textColorHighlight="@android:color/white"
             android:textColorHint="@android:color/darker_gray"
             android:textColorLink="@android:color/white" />
@@ -52,7 +52,7 @@
             android:ems="10"
             android:hint="הכנס שם משפחה"
             android:inputType="textPersonName"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/widget_edittext_dark"
             android:textColorHighlight="@android:color/white"
             android:textColorHint="@android:color/darker_gray"
             android:textColorLink="@android:color/white" />
@@ -65,7 +65,7 @@
             android:ems="10"
             android:hint="הכנס מידע נוסף"
             android:inputType="textPersonName"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/widget_edittext_dark"
             android:textColorHighlight="@android:color/white"
             android:textColorHint="@android:color/darker_gray"
             android:textColorLink="@android:color/white" />

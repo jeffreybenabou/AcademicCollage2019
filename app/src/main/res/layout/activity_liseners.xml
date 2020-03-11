@@ -37,7 +37,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="בפעילות זו אנחנו מיישמים את עניין המאזינים בשני דרכים שלמדנו בכיתה:\n - באמצעות הפעילות שלנו \n - באמצעות תבנית העיצוב\n\n\n"
-                android:textColor="#ffffff" />
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/textView19"
@@ -69,7 +69,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="יש ליצור כפתור כלשהוא בתבנית העיצוב ולתת לו מזהה בעל שם משמעותי(באמצעות הפקד id שבדרך כלל נמצא ראשון ברשימת המאפיינים של הפקד- יש לזכור לעבוד עם קונבנציות-אותיות קטנות והפרדה בין מילים באמצעות קו תחתון)\n"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
@@ -92,7 +92,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="לאחר מכן אנחנו נילך אל הפעילות שמכילה את תבנית העיצוב שהכפתור שהוספנו נמצא בה-נניח שאנחנו הוספנו כפתור בתבנית עיצוב שמשוייכת לפעילות שקוראים לה MainActivity אז ניגש אל הקוד של MainActivity, לאחר מכן אנחנו נבנה מתודה כלשהיא שמקבלת פרמטר של View.\n, המתודה חייבת להיות public וגם לא להחזיר ערך כלומר .void \nמה שהמתודה הזאת עושה היא לקבל את האובייקט שילחץ עלייה(במקרה שלנו כפתור אך יתכנו אובייקטים שונים כמו כפתור תמונה ועוד). \n"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
@@ -115,7 +115,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="  נבנה Switch כלשהוא שהפרמטר שלו הוא View.getId() ואז נתחיל לתפוס מקרים לפי המזהה שהגדרנו לכפתור שלנו או לכפתורים באמצעות פנייה למזהה של הרכיב, לדוגמא לכפתור שקוראים לו basic_component אנחנו נמצא אותו באמצעות R.id.basic_component .\n"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
@@ -138,7 +138,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="נחזור אל תבנית העיצוב שבה הכפתור שלנו נמצא, נלחץ על הכפתור שלנו וכאשר המאפיינים של הכפתור יפתחו נצטרך לחפש את המאפיין שקוראים לו onClick ולבחור את המתודה שיצרנו.\n"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
@@ -161,7 +161,7 @@
 
                 android:layout_margin="16dp"
                 android:text="public void onButtonClick(View view )\n{\nIntent intentToStart=new Intent(this,this.getClass());\nswitch (view.getId())\n{\ncase R.id.basic_component:\nintentToStart=new Intent(this, BasicComponents.class);\nbreak;\ncase R.id.basic_layout:\nintentToStart=new Intent(this, Layouts.class);\nbreak;\nstartActivity(intentToStart);\n}"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/textView38"
@@ -193,7 +193,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="יש ליצור כפתור כלשהוא בתבנית העיצוב ולתת לו מזהה בעל שם משמעותי(באמצעות הפקד id שבדרך כלל נמצא ראשון ברשימת המאפיינים של הפקד- יש לזכור לעבוד עם קונבנציות-אותיות קטנות והפרדה בין מילים באמצעות קו תחתון)\n"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
@@ -216,7 +216,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="  לאחר מכן אנחנו נילך אל הפעילות שמכילה את תבנית העיצוב שהכפתור שהוספנו נמצא בה-נניח שאנחנו הוספנו כפתור בתבנית עיצוב שמשוייכת לפעילות שקוראים לה MainActivity אז ניגש אל הקוד של MainActivity, לאחר מכן נגדיר אובייקט מסוג כפתור וניגש למתודה onCreate ושמה אנחנו נמצא את הכפתור שלנו על פי המזהה שלו באמצעות הפקודה\n Button button=findViewById(R.id.button)"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
@@ -248,7 +248,7 @@
 }\n
 כל הפעולות שנרצה לעשות בעת לחיצה נעשה בתוך המתודה onClick
 "
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView20" />
 

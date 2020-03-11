@@ -71,7 +71,7 @@ emailIntent.putExtra(Intent.EXTRA_SUBJECT,"נושא");\n\n
 emailIntent.putExtra(Intent.EXTRA_TEXT,"text here");\n
 
 '
-                        android:textColor="#ffffff"
+                        android:textColor="@android:color/black"
                         android:textIsSelectable="true"
                         tools:ignore="HardcodedText" />
 
@@ -132,7 +132,7 @@ https://www.youtube.com/watch?v=fTbzkT6lOdw\n
 https://www.youtube.com/watch?v=gUl5M9QVXrA\n
 אנחנו רואים שאחרי המילה watch?v= מגיע לנו מין קוד שמייצג לנו את הסרטון שנרצה להציג למשתמש כל מה שצריך לעשות הוא לקחת את הקוד ולשנות אותו במקום הקוד שאני שמתי.
 '
-                        android:textColor="#ffffff"
+                        android:textColor="@android:color/black"
                         android:textIsSelectable="true"
                         tools:ignore="HardcodedText" />
 
@@ -182,7 +182,7 @@ https://www.youtube.com/watch?v=gUl5M9QVXrA\n
                         android:layout_margin="16dp"
                         android:text='דגש חשוב שצריך לדעת על מנת להפעיל שעון מעורר- יש להוסיף הרשאת גישה אל תוך קובץ הmanifest\n
 uses-permission android:name="com.android.alarm.permission.SET_ALARM" '
-                        android:textColor="#ffffff"
+                        android:textColor="@android:color/black"
                         android:textIsSelectable="true"
                         tools:ignore="HardcodedText" />
 
@@ -254,7 +254,7 @@ uses-permission android:name="com.android.alarm.permission.SET_ALARM" '
                         android:layout_height="wrap_content"
                         android:layout_margin="16dp"
                         android:text='על מנת לפתוח דף פייסבוק ספציפי יש להיכנס לאתר הבא:'
-                        android:textColor="#ffffff"
+                        android:textColor="@android:color/black"
                         android:textIsSelectable="true"
                         tools:ignore="HardcodedText" />
 
@@ -263,8 +263,8 @@ uses-permission android:name="com.android.alarm.permission.SET_ALARM" '
                         android:layout_height="wrap_content"
                         android:autoLink="web"
                         android:text="https://lookup-id.com/# \n ולאחר מכן יש להכניס את הקישור של הדף שאותו תרצו לקבל בתוך האתר ולהחליף את הidשקיבלתם בid שאני שמתי"
-                        android:textColor="#ffffff"
-                        android:textColorLink="#ffffff" />
+                        android:textColor="@android:color/black"
+                        android:textColorLink="@android:color/black" />
 
                     <Button
                         android:id="@+id/facebook_example"
@@ -347,7 +347,7 @@ uses-permission android:name="com.android.alarm.permission.SET_ALARM" '
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="לחץ על התמונה כדי להוסיף תמונה חדשה מהגלריה"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:textSize="24sp" />
 
 

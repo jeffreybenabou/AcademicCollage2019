@@ -14,7 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/rounded_corner"
+            android:background="#ECBF89"
             android:orientation="vertical"
             android:paddingTop="8dp"
             android:paddingBottom="8dp">

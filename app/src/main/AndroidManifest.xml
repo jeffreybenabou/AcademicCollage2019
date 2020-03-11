@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".advancePrograming.RecyclerExample.RecyclerExampleVacation"></activity>
+        <activity android:name=".advancePrograming.RecyclerExample.RecyclerExampleVacation" />
         <activity android:name=".advancePrograming.RecyclerExample.RecyclerViewExample" />
         <activity android:name=".advancePrograming.ThreadExample" />
         <activity android:name=".advancePrograming.AnimationExample" />
