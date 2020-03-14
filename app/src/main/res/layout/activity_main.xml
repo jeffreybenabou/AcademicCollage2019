@@ -68,13 +68,22 @@
                 android:text="שיעור שני-הכרות עם סוגי פריסות" />
 
 
-            <Button
+                <Button
                 android:id="@+id/animation_button"
                 style="@style/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="onButtonClick"
                 android:text="אנימציות" />
+
+            <Button
+                android:id="@+id/gif_example"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
+                android:text="GIF" />
+
 
             <TextView
                 android:id="@+id/textView2"

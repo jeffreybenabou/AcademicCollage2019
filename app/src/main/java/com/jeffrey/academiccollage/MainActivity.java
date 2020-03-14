@@ -14,6 +14,7 @@ import com.jeffrey.academiccollage.advancePrograming.RecyclerExample.RecyclerVie
 import com.jeffrey.academiccollage.advancePrograming.SwipeRefreshControl;
 import com.jeffrey.academiccollage.advancePrograming.ThreadExample;
 import com.jeffrey.academiccollage.basicPrograming.DialogExample;
+import com.jeffrey.academiccollage.basicPrograming.GifExample;
 import com.jeffrey.academiccollage.basicPrograming.ImplicitIntentExample;
 import com.jeffrey.academiccollage.basicPrograming.LifeCycle;
 import com.jeffrey.academiccollage.basicPrograming.Liseners;
@@ -65,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.fragment_example:
                 intentToStart=new Intent(this, BottomNavigation.class);
+
+                break;
+            case R.id.gif_example:
+                intentToStart=new Intent(this, GifExample.class);
 
                 break;
             case R.id.animation_button:
