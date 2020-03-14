@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu  xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fragment1"
+        android:icon="@drawable/ic_1_foreground"
+        android:title="פרגמנט ראשון" />
+    <item
+        android:id="@+id/fragment2"
+        android:icon="@drawable/ic_2_foreground"
+        android:title="פרגמנט שני" />
+    <item
+        android:id="@+id/fragment3"
+        android:icon="@drawable/ic_3_foreground"
+        android:title="פרגמנט שלישי" />
+</menu>

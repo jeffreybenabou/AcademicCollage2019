@@ -106,6 +106,13 @@
                 android:layout_height="wrap_content"
                 android:onClick="onButtonClick"
                 android:text="שמירת נתונים" />
+            <Button
+                android:id="@+id/fragment_example"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
+                android:text="דוגמא לתפריט ניווט תחתון באמצעות פרגמנטים" />
 
             <Button
                 android:id="@+id/swep_refresh_button"

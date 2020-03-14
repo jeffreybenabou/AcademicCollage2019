@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.jeffrey.academiccollage.advancePrograming.AnimationExample;
 import com.jeffrey.academiccollage.advancePrograming.AnswerQestion;
+import com.jeffrey.academiccollage.advancePrograming.Fragment.example1.BottomNavigation;
 import com.jeffrey.academiccollage.advancePrograming.RecyclerExample.RecyclerViewExample;
 import com.jeffrey.academiccollage.advancePrograming.SwipeRefreshControl;
 import com.jeffrey.academiccollage.advancePrograming.ThreadExample;
@@ -60,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
         {
             case R.id.basic_component:
                 intentToStart=new Intent(this, BasicComponents.class);
+
+                break;
+            case R.id.fragment_example:
+                intentToStart=new Intent(this, BottomNavigation.class);
 
                 break;
             case R.id.animation_button:
