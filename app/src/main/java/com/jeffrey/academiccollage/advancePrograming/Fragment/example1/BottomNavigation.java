@@ -21,12 +21,25 @@ public class BottomNavigation extends BasicActivity {
 
     private void setTheFragmentManger() {
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+        /*
+        * קודם מוצאים את האובייקט של הניווט שלנו לפי המזהה שלו
+         * */
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
+            /*
+            * לאחר מכן נוסיף אל האובייקט שיצרנו מאזין מסוג setOnNavigationItemSelectedListener שמקבל כפרמטר אובייקט מסוג OnNavigationItemSelectedListener.
+
+             * */
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment selectedFragmant=null;
+                /*נגדיר אובייקט מסוג פרגמנט ונאתחל אותו בשלב הראשוני אל null
+                 */
                 switch (item.getItemId())
                 {
+                    /*
+                    * בודק את המזהה של הכפתור שנלחץ בניווט התחתון ולאחר מכן מאתחל את הפרמנט שיצרנו בפרגמנט שנרצה להציג למשתמש 
+
+                     * */
                     case R.id.fragment1:
                         selectedFragmant=new FirstFragment();
                         break;
@@ -37,6 +50,12 @@ public class BottomNavigation extends BasicActivity {
                         selectedFragmant=new ThirdFragment();
                         break;
                 }
+                /*
+                * נפנה אל מנהל הפרגמנטים getSupportFragmentManager נבקש ממנו להתחיל לבצע שינוי של הפרגמנט שנרצה שיוצג באמצעות beginTransaction ולאחר מכן נגדיר לו את הפרגמנט שאנחנו רוצים שהוא יציג באמצעות replace
+                *  שמקבל כפרמטר את המזהה של הפרגמנט שהוספנו בפעילות הראשית וגם את האובייקט מסוג פרגמנט שהגדרנו למעלה ובסוף commit כדי לאשר את כל העניין.
+
+                 * */
+
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_view,selectedFragmant).commit();
                 return true;
             }

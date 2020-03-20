@@ -90,6 +90,7 @@ public class SignIn extends AppCompatActivity {
         });
     }
 
+
     private void saveUserDataOnFireBase(){
         user = FirebaseAuth.getInstance().getCurrentUser();
         FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(this, new OnSuccessListener<InstanceIdResult>() {
