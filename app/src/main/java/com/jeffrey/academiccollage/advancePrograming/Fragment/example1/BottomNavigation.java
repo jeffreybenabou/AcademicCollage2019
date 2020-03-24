@@ -16,6 +16,8 @@ public class BottomNavigation extends BasicActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buttom_navigation);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_view,new FirstFragment()).commit();
+
         setTheFragmentManger();
     }
 
