@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.instegram:
             Toast.makeText(this,"תלוי רק בכם"+getEmojiByUnicode(0x1F60A),Toast.LENGTH_LONG).show();
             break;
+
             case R.id.move_between_screens:
             intentToStart=new Intent(this, MoveBetweenScreens.class);
             break;
